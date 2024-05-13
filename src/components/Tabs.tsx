@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { TabProps } from "./Tab";
 
 interface TabsProps {
-  children: React.ReactNode[];
+  children: React.ReactElement<TabProps>[];
   defaultIndex?: number;
   rightComponent: React.ReactNode;
 }
@@ -21,7 +22,7 @@ const Tabs: React.FC<TabsProps> = ({
     <div className="tabs-container">
       <div className="row-flex">
         <div className="row-flex">
-          {children.map((child, index) => {
+          {children.map((child: React.ReactElement<TabProps>, index) => {
             return (
               <div key={index}>
                 <button

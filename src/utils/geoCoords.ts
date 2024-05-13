@@ -1,4 +1,6 @@
-function geoCoords() {
+export type Coordinates = { latitude: number; longitude: number };
+
+const geoCoords = () => {
   return new Promise((resolve, reject) => {
     if (window.navigator.geolocation) {
       window.navigator.geolocation.getCurrentPosition(
@@ -13,6 +15,6 @@ function geoCoords() {
       console.log("Geo Location not supported");
     }
   });
-}
+};
 
 export default geoCoords;

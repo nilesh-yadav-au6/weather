@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import CityInput from "./components/CityInput";
 import Weather from "./components/Weather";
 import "./App.css";
-import geoCoords from "./utils/geoCoords";
+import geoCoords, { Coordinates } from "./utils/geoCoords";
 import getWeather, {
   getCityCoords,
   getCityName,
@@ -27,7 +27,8 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const { longitude: lon, latitude: lat } = await geoCoords();
+      const { longitude: lon, latitude: lat } =
+        (await geoCoords()) as Coordinates;
       if (lon && lat) {
         const { name, country } = await getCityName(lon, lat);
         dispatch(setGeoCoordinates({ payload: { lon, lat } }));

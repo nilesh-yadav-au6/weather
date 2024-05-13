@@ -11,8 +11,6 @@ function Weather() {
   const app = useSelector((state: RootState) => state.app);
   const { weather, unit } = app;
 
-  console.log(weather, unit);
-
   useEffect(() => {
     getCityImage(app.city).then((value) => {
       setData(value.results[0].urls.small);

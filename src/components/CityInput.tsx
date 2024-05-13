@@ -39,7 +39,7 @@ function CityInput() {
     handleGeolocationSearch();
   }, []);
 
-  const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     clearTimeout(time);
     time = setTimeout(() => {

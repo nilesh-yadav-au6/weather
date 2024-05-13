@@ -9,7 +9,7 @@ function useTemp(temp: number, toFixed = 0) {
     return ((temp * 9) / 5 + 32).toFixed(toFixed);
   }
 
-  return parseFloat(temp).toFixed(toFixed);
+  return temp.toFixed(toFixed);
 }
 
 export default useTemp;
